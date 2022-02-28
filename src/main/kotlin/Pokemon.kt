@@ -74,6 +74,7 @@ class Pokemon(var especie: Especie, var nivel: Int = 1) {
     fun evolucionar():String {
         var especieAntigua = especie
         especie = especie.evoluciona!!
+        curar(especie.HP)
         return "¡$especieAntigua evoluciona a $especie!"
     }
 }
