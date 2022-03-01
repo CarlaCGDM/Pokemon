@@ -8,7 +8,7 @@ enum class MovimientoEspecial(
             for (turno in 0..turnos) {
                 pokemon.estados += Estado(potenciador = 0f, etiqueta = "CARGANDO")
             }
-            pokemon.estados += Estado(potenciador = turnos*2f, etiqueta = "POTENCIADO")
+            pokemon.estados += Estado(potenciador = turnos*1.25f, etiqueta = "POTENCIADO")
             return "${pokemon.especie.name} se prepara para lanzar una gran llamarada."
         }
     },
@@ -18,6 +18,7 @@ enum class MovimientoEspecial(
             var turnos = (4..8).random()
             var incremento = 0.25f
             for (turno in 0..turnos) {
+                incremento*=2
                 pokemon.estados += Estado(escudo = 1+incremento, etiqueta = "ENTERRADO")
             }
             return "${pokemon.especie.name} comienza a enterrarse bajo tierra."
