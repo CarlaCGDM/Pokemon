@@ -1,5 +1,5 @@
 # Pokémon
-Juego terminado de Pokémon con interfaz en Jetpack Compose. El juego consiste en derrotar tantos enemigos generados aleatoriamente como sea posible con el pokémon que el jugador
+Juego de Pokémon con interfaz en Jetpack Compose. El juego consiste en derrotar tantos enemigos generados aleatoriamente como sea posible con el pokémon que el jugador
 elige al iniciar una partida. 
 
 ![combate14_optimizado](https://user-images.githubusercontent.com/92323990/158068144-40c81ea9-f7ce-4acb-ad95-91e849a579e1.gif)
