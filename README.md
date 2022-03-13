@@ -170,4 +170,4 @@ fun turnoEnemigo():String {
     }
 ```
 
-Proceso de creación detallado paso a paso a modo de tutorial [aquí](https://docs.google.com/document/d/1Cef8C2CvtXke1Z3iemVnqa-AaKFhtFU4VOE37BgGGi8/edit?usp=sharing). 
+Proceso completo de creación detallado paso a paso a modo de tutorial [aquí](https://docs.google.com/document/d/1Cef8C2CvtXke1Z3iemVnqa-AaKFhtFU4VOE37BgGGi8/edit?usp=sharing). 
