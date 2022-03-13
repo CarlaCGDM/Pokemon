@@ -1,5 +1,5 @@
 # Pokémon
-Juego terminado de Pokémon con interfaz en Jetpack Compose. El juego consiste en derrotar tantos enemigos como sea posible con el pokémon que el jugador
+Juego terminado de Pokémon con interfaz en Jetpack Compose. El juego consiste en derrotar tantos enemigos generados aleatoriamente como sea posible con el pokémon que el jugador
 elige al iniciar una partida. 
 
 ![Juego Terminado](https://i.ibb.co/VN9h2sg/combate16.gif)
@@ -89,7 +89,7 @@ Mediante los movimientos especiales, los pokémon pueden adquirir estados que mo
 y otras posibilidades. Cada estado se aplica durante un turno y desaparece de la cola de estados al acabar, dejando paso al siguiente que esté en espera. Un movimiento especial
 genera automáticamente una serie de estados.
 
-´´´
+```
 enum class MovimientoEspecial(
     var tipo:Tipo,
     var coste:Int
@@ -145,4 +145,26 @@ enum class MovimientoEspecial(
         return "Movimiento especial del pokémon."
     }
 }
-´´´
+```
+
+### El turno del enemigo:
+En función de varios factores, como el porcentaje de carga de su movimiento especial y su porcentaje de vida restante, el pokémon enemigo elegirá realizar una acción u otra
+durante su turno. Por ejemplo, la probabilidad de que use su turno para curarse es mucho mayor si la vida que le queda es muy poca.
+
+``` 
+fun turnoEnemigo():String {
+        when (movimientoEspecialEnemigoDisponible()) {
+            true -> {return movimientoEspecialEnemigo()}
+            else -> {
+                var suerte = (1..5).random()
+                var urgencia = enemigo.vidaRestante*10/enemigo.HP
+                when {
+                    (urgencia < 2) -> { if (suerte < 4) {return curarEnemigo()}}
+                    (urgencia < 5) -> { if (suerte < 2) {return curarEnemigo()}}
+                    else -> {if (suerte == 1) {return curarEnemigo()}}
+                }
+                return ataqueEnemigo()
+            }
+        }
+    }
+```
