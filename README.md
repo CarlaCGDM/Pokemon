@@ -2,9 +2,10 @@
 Juego terminado de Pokémon con interfaz en Jetpack Compose. El juego consiste en derrotar tantos enemigos generados aleatoriamente como sea posible con el pokémon que el jugador
 elige al iniciar una partida. 
 
-![Juego Terminado](https://i.ibb.co/VN9h2sg/combate16.gif)
+![combate14_optimizado](https://user-images.githubusercontent.com/92323990/158068144-40c81ea9-f7ce-4acb-ad95-91e849a579e1.gif)
 
-### Estructura básica:
+
+### La estructura básica:
 La estructura básica del juego se compone de una columna principal, cuyo primer elemento es el logo de Pokémon y su segundo elemento es una función composable que se elige
 en función de un switch. Mediante funciones lambda se llama a la pantalla de selección de pokémon, la pantalla de combate o la pantalla de puntuación.
 
