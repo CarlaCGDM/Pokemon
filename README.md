@@ -9,7 +9,7 @@ elige al iniciar una partida.
 La estructura básica del juego se compone de una columna principal, cuyo primer elemento es el logo de Pokémon y su segundo elemento es una función composable que se elige
 en función de un switch. Mediante funciones lambda se llama a la pantalla de selección de pokémon, la pantalla de combate o la pantalla de puntuación.
 
-```
+```kotlin
 @Composable
 fun pantallaSeleccion(){}
 
@@ -43,7 +43,7 @@ fun App() {
 Los pokémon se generan con atributos semi-aleatorios en función de la especie y el nivel que se indique en el constructor. Tienen métodos de ataque, movimiento especial,
 cura, subir nivel, evolución, etc. y cuentan con ataques asignados de forma aleatoria en base a su tipo (o tipos, en el caso de pokémon multitipo).
 
-``` 
+```kotlin
 enum class Especie(
    val HP:Int,
    val ataque:Int,
@@ -63,7 +63,7 @@ enum class Especie(
    //…
 }
 ```
-```
+```kotlin
 class Pokemon(var especie: Especie, var nivel: Int = 1) {
     var HP = especie.HP; private set
     var ataque = especie.ataque; private set
@@ -90,7 +90,7 @@ Mediante los movimientos especiales, los pokémon pueden adquirir estados que mo
 y otras posibilidades. Cada estado se aplica durante un turno y desaparece de la cola de estados al acabar, dejando paso al siguiente que esté en espera. Un movimiento especial
 genera automáticamente una serie de estados.
 
-```
+```kotlin
 enum class MovimientoEspecial(
     var tipo:Tipo,
     var coste:Int
@@ -152,7 +152,7 @@ enum class MovimientoEspecial(
 En función de varios factores, como el porcentaje de carga de su movimiento especial y su porcentaje de vida restante, el pokémon enemigo elegirá realizar una acción u otra
 durante su turno. Por ejemplo, la probabilidad de que use su turno para curarse es mucho mayor si la vida que le queda es muy poca.
 
-``` 
+```kotlin
 fun turnoEnemigo():String {
         when (movimientoEspecialEnemigoDisponible()) {
             true -> {return movimientoEspecialEnemigo()}
